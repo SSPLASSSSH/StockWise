@@ -6,4 +6,4 @@ class Product(models.Model):
     date_added = models.DateField(auto_now_add=True)
     price = models.IntegerField()
     description = models.TextField()
-    category = models.CharField()
+    category = models.CharField(max_length=255)
