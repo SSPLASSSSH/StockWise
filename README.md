@@ -1,7 +1,5 @@
-- tautan ke 
-
-
-
+- tautan ke adaptable aplikasi saya
+https://stockwise.adaptable.app
 
 - penjelasan mengenai implementasi mulai dari inisiasi repository sampai routing url dan deploy ke adaptable
 
@@ -9,7 +7,7 @@
 Dimulai dengan menginisiasi repository untuk proyek baru, disini saya menamai repository dengan nama StockWise, lalu
 saya melakukan deployment django dengan terlebih dahulu mengaktivasi python virtual enviroment lalu menyiapkan library maupun modul yang dibutuhkan di requirements.txt yang kemudian dipasang dengan mengaktifkannya pada command promtp yang telah diaktifkan virtual enviroment. lalu saya membuat proyek django saya dengan nama StockWise dan melakukan push ke repository yang telah saya buat
 
-2.pembuatan aplikasi  main
+2. pembuatan aplikasi  main
 dengan menjalankan perintah "python manage.py startapp main"(notes : virtual enviroment sudah diaktifkan terlebih dahulu ), saya mulai menginisiasi dengan mendaftarkan aplikasi "main" ke dalam variabel INSTALLED_APP, kemudian membuat dan mengisi main.html. 
 Kemudian tambahkan beberapa elemen di models.py(notes : untuk sementara saya hanya menambahkan category), lalu lakukan migrasi model dengan "python manage.py makemigrations" dan "python manage.py migrate"
 lalu saya menghubungkan view dengan template dengan menambahkan "from django.shortcuts import render" di views.py dan melakukan modifikasi di fungsi show_main dan diikuti dengan memodifikasi file html.
