@@ -12,11 +12,11 @@ dengan menjalankan perintah "python manage.py startapp main"(notes : virtual env
 Kemudian tambahkan beberapa elemen di models.py(notes : untuk sementara saya hanya menambahkan category), lalu lakukan migrasi model dengan "python manage.py makemigrations" dan "python manage.py migrate"
 lalu saya menghubungkan view dengan template dengan menambahkan "from django.shortcuts import render" di views.py dan melakukan modifikasi di fungsi show_main dan diikuti dengan memodifikasi file html.
 
-3. 
+3. Routing URl
 saya mengonfigurasi routing url dengan melakukan modifikasi file urls.py yang ada direktori main, lalu dilanjutkan dengan impor fungsi include pada file urls.py yang ada di direktori StockWise, serta memodifikasi variable patterns 
 
 
-4. 
+4. Deploy ke adaptable
 deployment saya lakukan dengan cara menghubungkan repository saya dengan adaptable. lalu memilih konfigurasi python dan command yang sesuai, pada adaptable saya menamai aplikasi saya dengan nama SstockwiseE.
 
 
