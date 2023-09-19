@@ -1,3 +1,6 @@
+
+Tugas 2
+
 - tautan ke adaptable aplikasi saya
 https://stockwise.adaptable.app
 
@@ -86,8 +89,86 @@ mengenai kompleksitas, MVC merupakan arsitektur yang paling sederhana, MVT memil
 dan dari sisi penggunaan MVC digunakan secara luas untuk berbagai jenis aplikasi termasuk pengembangan web dan aplikasi desktop. MVT digunakan untuk pengembangan aplikasi web dengan menggunakan kerangka kerja Django. dan MVVM untuk  pengembangan aplikasi desktop dan mobile dengan antarmuka pengguna yang kompleks, 
 
 
+Tugas 3
 
+1. Beberapa perbedaan POST dan GET di Django
 
+    - Metode HTTPS yang digunakan
+    pada POST, Variabel data yang dikirim tidak ditampilkan pada URL, sedangkan pada GET, variabel data dikirim terlihat di URL sehingga cocok untuk permintaan yang memmbutuhkan pergantian atau masukkan data variabel baru
+
+    - keamanan data yang dikirim
+    untuk data yang bersifat rahasia seperti password, disarankan untuk menggunakan POST sedangkan data-data yang dinilai tidak terlalu privasi dapat menggunakan GET
+
+    - Penggunaan ideal
+    Penggunaan POST untuk data yang dikirim melalui server biasaya untuk input data melalui form sedangkan Penggunaan GET untuk mengambil data dari server, atau biasanya untuk input data melalui link
+
+    - Pembatasan panjang string
+    pada POST String tidak memiliki batasan sedangkan pada GET memiliki batasan untuk string sepanjang 2047 char
+
+2. Perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+    - Tujuan penggunaan
+        - XML memiliki tujuan untuk menggambarkan dan mentransfer data, serta struktur data yang sangat kuat dan fleksibel, seperti pertukaran data antar sistem
+        - JSON memiliki tujuan untuk pertukaran data antar aplikasi dan server karena memiliki  format yang ringkas dan ringan. penggunaan secara umum untuk pengembangan web
+        - HTML memiliki tujuan untuk membuat struktur dan tampilan konten web. berfungsi untuk mengirim data dan merender halaman web
+
+    - Syntax
+        - XML memiliki syntax yang lebih rumit dengan elemen-elemen yang diapit oleh tag, atribut, dan struktur yang sangat berlapis-lapis sehingga menyulitkan dibaca manusia secara langsung
+        - JSON menggunakan syntax yang lebih sederhana dengan menggunakan key-value pairs yang diapit {} ,hal ini memudahkan manusia membaca secara langsung
+        - HTML menggunakan syntax berbasis tag yang mendefinisikan elemen-elemen dan struktur halaman web.
+
+    - Struktur data
+        - XML Digunakan untuk menggambarkan data dan struktur data yang sangat terstruktur dan hierarkis.
+        - JSON digunakan untuk mengirim data yang memiliki struktur yang lebih sederhana daripada XM
+        - HTML Dikhususkan untuk menentukan tampilan dan struktur konten web
+
+3. Beberapa alasan mengapa  JSON sering digunakan dalam pertukaran data antara aplikasi web modern
+    - Syntax yang ringan dan ringkas sehingga memiliki payload yang lebih kecil sehingga berpengaruh pada bandwidth yang digunakan
+
+    - Mudah dibaca manusia sehingga dapat lebih mudah dalam pengembangannya
+
+    - Didukung oleh banyak bahasa pemrograman
+
+    - Tidak terkait dengan aplikasi tertentu sehingga dapat digunakan antar platform
+
+    - Terintegrasi dengan browser sehingga mempermudah pertukaran data antara server dan browser
+
+    - Penggunaan secara umum sehingga telah menjadi stadar di komunitas pengembangan web
+
+    dengan kelebihan tersebut pengembang menjadi lebih mudah untuk membuat aplikasi web yang efisien dan mudah dimaintain.
+
+4. Penjelasan kode
+
+    - Membuat input form untuk menambahkan objek model pada app sebelumnya.
+        - Membuat kerangka view dengan membuat templates yang diisi base.html
+        - Lalu lakukan extends di main.html ke base.html
+        - Buat forms.py di main dengan isi model dan deklarasi setiap fields
+        - Impor beberapa modul yang dibutuhkan di views.py
+        - buat method agar menerima submit  pada form dan menyimpan di views.py
+
+    - Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+        - Import dan tambahkan path di urls.py untuk HTML
+        - buat berkas html baru pada main/template untuk menerima input product
+        - kemudian edit main.html agar semua elemen ditampilkan
+        - Import modul yang diperlukan pada views.py
+        - buat method yang menerima input request untuk diubah menjadi format lain seperti  XML, JSON, XML by ID, dan JSON by ID dengan menggunakan modul serializers. step ini dilakukan satu per satu sesuai format yang diinginkan
+    
+    - Membuat routing URL untuk masing-masing views
+        - import setiap tipe views pada urls.py
+        - tambahkan path setiap view pada variabels url_patterns di urls.py
+        - cek menggunakan python manage.py runserver di cmd lalu buka localhost/[nama views]
+
+5. SS akses kelima url menggunakan postman
+    - HTML
+    [![HTML-fix.png](https://i.postimg.cc/yxMMLxhJ/HTML-fix.png)](https://postimg.cc/ctckHsbZ)
+    - XML
+    [![XML.png](https://i.postimg.cc/Jh3jn2YS/XML.png)](https://postimg.cc/bGJZV3hR)
+    - JSON
+    [![JSON.png](https://i.postimg.cc/MZg41cpx/JSON.png)](https://postimg.cc/7bMmkZzQ)
+    - XML by ID
+    [![XML-by-ID.png](https://i.postimg.cc/LXwyk7Rv/XML-by-ID.png)](https://postimg.cc/0MGdPVzJ)
+    - JSON by ID
+    [![JSON-by-ID.png](https://i.postimg.cc/B6K53v9c/JSON-by-ID.png)](https://postimg.cc/CBwnHSKz)        
 
 
 

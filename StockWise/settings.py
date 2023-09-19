@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b4-b=opnyfk^s1b31e$i9+r)vpiwbdhwxi^k*g(t9upcn#^42)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'StockWise.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
