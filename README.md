@@ -168,8 +168,98 @@ Tugas 3
     - XML by ID
     [![XML-by-ID.png](https://i.postimg.cc/LXwyk7Rv/XML-by-ID.png)](https://postimg.cc/0MGdPVzJ)
     - JSON by ID
-    [![JSON-by-ID.png](https://i.postimg.cc/B6K53v9c/JSON-by-ID.png)](https://postimg.cc/CBwnHSKz)        
+    [![JSON-by-ID.png](https://i.postimg.cc/B6K53v9c/JSON-by-ID.png)](https://postimg.cc/CBwnHSKz)
+
+ Tugas 4
+
+ 1. Django UserCreationForm adalah sebuah bagian framework dari python. Form ini digunakan untuk membuat formulir pendaftaran pengguna dalam aplikasi web django.UserCreationForm menyediakan field sepeti username,password, email dan field yang yang sesuai dengan keinginan pengembang pada laman registrasi
+
+    - Kelebihan
+        - Mudah digunakan
+        bagian dari framework django sehingga hanya butuh untuk mengimpor dan mengintegrasikan form ini untuk diaplikasikan
+        - Memiliki validasi bawaan
+        memiliki validasi bawaan seperti panjang password, email yang valid dan lain sebagainya
+        - Fleksibilitas
+        dapat mengkustomisasi field n dan menambah field sesuai keinginan.
+    
+    - Kekurangan
+        - Terbatas pada Django
+        dirancang khusus untuk pengguna aplikasi Django sehingg tidak dapat digunakan di framework lain
+        - Hanya memiliki fitur dasar
+        tidak memiliki fitur tambahan atau yang lebih canggih seperti konfirmasi email,verifikasi captcha dan fitur keamanan lainnya
+        - Tidak dapat digunakan untuk semua kasus
+        terdapat beberapa kasus yang tidk cukup menggunakan Django UserCreationForm
 
 
+2. perbedaan antara autentikasi dan otorisasi dalam konteks Django adalah 
+    autentikasi merupakan proses verifikasi identitas pengguna, verifikasi biasanya melibatkan username dan password yang disandigkan dengan data pengguna di database. tujuan autentikasi adalah bahwa haya pengguna yang terverifikasi dapat masuk ke sistem untuk menjaga akses ke sumber daya aplikasi. Sedangkan otorisasi merupakan izin untuk pengguna terverifikasi untuk melakukan tindakan tertentu dalam aplikasiberdasarkan peran pengguna. Tujuan dari otorisasi adalah membatasi akses pengguna terhadap tindakan di dalam aplikasi sesuai dengan perannya
 
+    mengapa keduanya penting?
+    - meninngkatkan keamanan
+    penggunaan  autetnikasi dan otorisasi membantu keamanan aplikasi dengan memastikan pengguna yang terverifikasi yang masuk sistem dan meastikan pengguna yang terverifikasi hanya mendapatkan akses yang telah ditentukan
+    - Menjaga privasi 
+    Menjaga privasi pengguna dalam kebijakan keamanan data
+    - Kenyamanan pengalaman pengguna
+    Membuat pengguna merasa aman dengan fitur yang dimiliki aplikasi dengan hanya melihat data yang mereka inginkan
+
+3. Cookies dalam konteks aplikasi web merupakan potongan data yang disimpan di perangkat clien pengguna saat mengunjungi situs web. Cookies digunakan oleh server web untuk mengidentifikasi dan melacak pengguna serta menyimpan informasi yang perlu dipertahankan antara permintaan-permintaan HTTP. Sedangkan Django menggunakan cookies untuk mengelola data pelanggan dengan cara melakukan konfigurasi terlebih dahulu kemudian melakukan pengaturan data sesi(dalam bentuk dictionary) kemudian penympanan dalam cookie dan yangterakhir melakukan pengambilan data sesi.Dengan menggunakan cookies untuk mengelola data sesi pengguna, Django memungkinkan pengembang untuk menyimpan informasi penting pada sisi klien pengguna dan mempertahankannya di seluruh sesi pengguna. Hal ini berguna untuk mengidentifikasi pengguna yang masuk, menyimpan preferensi, atau melacak status sesi.
+
+4. penggunaan cookies aman secara default dalam pengembangan web jika diimplementasikan secara tepat sesuai dengan framework yang digunakan dan dilakukan pengawasan secara berkalauntuk menghindari beberapa resiko yang dapat ditimbulkan dari cookies, beberapa resiko penggunaan cookies adalah
+    - Risiko privasi
+    
+        data yang diambil cookies rentan disalahgunakan oleh oknum tidak bertanggung jawab dalam organisasi pengebang(careless insider)
+    - XSS
+
+        Rentan akan serangan XSS yang berakibat data pengguna dapat diakses secara illegal
+    - CSRF
+
+        Rentan akan serangan CSRF yang mengakibatkan tindakan yang tidak diinginkan pengguna , dapat diatasi dengan menggunakan toke CSRF
+    - Cookie theft
+
+
+        rentan ke pencuriansesi pengguna yag mengakibatkan penyerang mendapatkan akses ke akun pengguna
+    - Session Hijacking
+
+        serangan untuk mengambil ali sesi dari pengguna terverifikasi, dapat dicegah dengan melakukan enkripsi data
+    - Cookie overflow
+
+        terlalu besarnya ukuran cookies sehingga menggangu peforma aplikasi
+    - Cookie sniffing
+
+        pencurian yang terjadi akibat koneksi yang tidak aman
+    - Cookies kadaluwarsa
+
+        Cookies yang tidak kadaluwarsa dengan baik dapat memberikan risiko bagi pengguna jika data sesi atau otentikasi 
+        tersimpan terlalu lama.
+
+5. Step -step
+
+    - Implementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+        - Impor beberapa modulyang diperlukan(disini saya menggunakan UserCreationForm)
+        - buat method agar menampilkan beberapa fitur yang diinginkan
+        - buat page html baru untuk laman register
+        - kemudian impor fungsi yang dibuat di urls.py dan tambahkan path untuk mengakses fungsi yang sudah diimpor
+        - untuk fungsi login lakukan import modul yang diperlukan
+        - edit fungsi login yang telah saya buat sebelumnya untuk dapat melakukan autentikasi
+        - buat page login dengan html
+        - kemudian impor fungsi yang dibuat di urls.py dan tambahkan path untuk mengakses fungsi yang sudah diimpor
+        - untuk fungsi logout step yang diperlukan sama dengan login namun terdapat perbedaan di implementasi method
+    
+    - Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+        - meregister dua akun
+        - login akun pertama
+        - menambahkan 3 data produk
+        - ulangi dari step kedua untuk akun kedua
+
+    - Menghubungkan model Item dengan User.
+        - import modul yang dibutuhkan
+        - isi user pada models.py method Product dengan "models.ForeignKey(User, on_delete=models.CASCADE)"
+        - ubah conditional   pada create product agar sesuai dengan user yang diautentikasi
+        - isi variablename pada method show_main di views.py dengan "request.user.username"
+    
+    - Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+        - buat perubahan pada method login_user untuk dapat menampilkan last login
+        - tambhakan last login pada show_main dengan isi  "request.COOKIES['last_login']"
+        - kemudian ubah fungsi logout agar menyimpan cookies last login
+        - tambahkan tulisan untuk last login di main.html
 
