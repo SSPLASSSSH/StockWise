@@ -4,31 +4,91 @@
     <title>Register</title>
 {% endblock meta %}
 
-{% block content %}  
+{% block content %}
+<style>
+    /* CSS dengan tema kuning dan hitam */
+    .login {
+        background-color: #FFD300; /* Warna latar belakang kuning */
+        border: 1px solid #000; /* Garis tepi hitam */
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 50%; /* Mengurangi lebar form */
+        margin: 0 auto; /* Memusatkan form di tengah halaman */
+    }
 
-<div class = "login">
-    
-    <h1>Register</h1>  
+    h1 {
+        font-size: 24px;
+        color: #000; /* Warna teks hitam */
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+    form {
+        margin-top: 20px;
+    }
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #000; /* Garis tepi hitam */
+    }
+
+    input[type="submit"] {
+        background-color: #000; /* Warna latar belakang hitam */
+        color: #FFFFFF; /* Warna teks kuning */
+        padding: 10px 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #452A5A; /* Warna latar belakang hitam ketika hover */
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        color: #FF6347; /* Warna teks merah */
+        font-weight: bold;
+    }
+</style>
+
+<div class="login">
+    <h1>Register</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Daftar"/></td>
+            </tr>
+        </table>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
     {% endif %}
-
-</div>  
+</div>
 
 {% endblock content %}

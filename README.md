@@ -263,3 +263,34 @@ Tugas 3
         - kemudian ubah fungsi logout agar menyimpan cookies last login
         - tambahkan tulisan untuk last login di main.html
 
+
+
+Tugas 5
+
+1. elemen selector yang umum digunakan
+    - Universal selector
+    digunakan untuk memilih semua dokumen di HTML, digunakan ketika mengatur padding, amrgin atau nilaiu default lainnya.
+    - Type Selector
+   memilih elemen dengan tipe tertentu, digunkan untuk mengatur gaya secaraumum pada type trertentu
+    - Class Selector
+    memilih elemen dengan kelas tertentu, digunakan untuk mengaplikasikan gaya ke elemen dengan class yang sama
+
+2. beberapa HTML5tag yang saya ketahui
+    <html>: Elemen root yang mengelilingi seluruh konten halaman web.
+    <head>: Berisi informasi meta, tautan ke berkas eksternal, dan elemen-elemen lain yang tidak terlihat oleh pengguna.
+    <title>: Menentukan judul halaman yang akan ditampilkan di bilah judul browser.
+    <meta>: Digunakan untuk memberikan informasi meta tentang halaman web, seperti karakter set dan deskripsi.
+    <style>: Mengandung aturan gaya CSS yang diterapkan pada elemen di halaman.
+    <script>: Digunakan untuk menyisipkan kode JavaScript ke dalam halaman web.
+    <body>: Berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, dan elemen-elemen interaktif.
+    <h1>, <h2>, ...,: Elemen heading yang digunakan untuk mengatur hierarki judul dalam dokumen.
+    <div>: Elemen kontainer umum yang digunakan untuk mengelompokkan dan mengatur elemen-elemen lain.
+
+3. Margin adalah ruang di luar batas elemen HTML yang digunakan untuk mengatur jarak antara elemen dengan elemen lain di sekitarnya. Sebaliknya, padding adalah ruang di dalam batas elemen yang mengatur jarak antara konten elemen dan batas elemen itu sendiri. Margin tidak memiliki warna dan dapat tumpang tindih dengan margin elemen lain, sedangkan padding dapat memiliki warna dan tidak tumpang tindih dengan padding elemen lain. Keduanya penting dalam mengatur tata letak dan tampilan elemen di halaman web.
+4. Bootstrap adalah framework CSS yang menawarkan gaya dan komponen siap pakai, sangat cocok untuk proyek dengan tenggat waktu cepat dan tim besar. Tailwind CSS, di sisi lain, mengadopsi pendekatan "utility-first" yang memberikan fleksibilitas yang besar dalam mengatur tampilan sesuai kebutuhan. Pilih Bootstrap jika  menginginkan solusi cepat dan baku, sementara Tailwind cocok untuk pengembang yang ingin lebih mengutamakan kontrol desain dan tampilan yang lebih kustom sesuai proyeknya.
+5. implementasi setiap checklist
+    saya mencoba menggunakan bootsrap dan  tailwind anmun pada akhirnya say ahanya menggunakan bootstrap karena ada beberap template dengan dokunetasi yang mudah dipahami sehingga memudahkan saya.
+    setiap page saya menerapka suatu font theme yaitu kuning dan hitam dengan melakukan setting baik di bagian body, table script dan sebagainya
+    pada tugas kali ini, untuk memahami HTMLtag5 dan bentuk template saya banyak dibantu oleh AI. seperti bagaimana cara iterasi untuk setiap product dan menghapusnya
+    pada daftar inventory, saya mencoba menggunakan card yang sudah ada templatenya, namun saya  coba cocokan dengan elemen yang saya buat di HTML saya.
+
