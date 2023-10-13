@@ -294,3 +294,28 @@ Tugas 5
     pada tugas kali ini, untuk memahami HTMLtag5 dan bentuk template saya banyak dibantu oleh AI. seperti bagaimana cara iterasi untuk setiap product dan menghapusnya
     pada daftar inventory, saya mencoba menggunakan card yang sudah ada templatenya, namun saya  coba cocokan dengan elemen yang saya buat di HTML saya.
 
+Tugas 6
+
+link website :  http://roger-moreno-tugas.pbp.cs.ui.ac.id.
+
+1.  perbedaan antara asynchronous programming dengan synchronous programming.
+Asynchronous programming dan synchronous programming adalah dua paradigma yang berbeda dalam dunia pemrograman. Dalam synchronous programming, tugas-tugas dieksekusi satu per satu, secara berurutan. Program harus menunggu tugas saat ini selesai sebelum melanjutkan ke tugas berikutnya. Paradigma ini cocok untuk tugas-tugas sederhana dan singkat. Di sisi lain, asynchronous programming memungkinkan tugas-tugas dieksekusi secara bersamaan atau konkuren. Program tidak harus menunggu tugas selesai sebelum menjalankan yang lain, sehingga sangat berguna untuk menangani tugas yang memerlukan waktu lama, seperti pengunduhan data atau pemanggilan API jarak jauh. Untuk mengelola alur eksekusi dalam asynchronous programming, biasanya digunakan konsep callback, promise, atau async/await.
+
+2. Maksud dari paradigma tersebut dan  salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming mengacu pada pendekatan pemrograman di mana program merespons peristiwa atau kejadian yang terjadi, seperti interaksi pengguna atau perubahan status, dengan menjalankan tindakan atau fungsi yang sesuai. Ini berarti program bekerja berdasarkan serangkaian peristiwa yang terjadi, bukan berurutan seperti dalam pemrograman berbasis aliran kode.
+contohnya penggunaan add product menggunakan ajax
+
+3.  penerapan asynchronous programming pada AJAX
+Penerapan asynchronous programming pada AJAX (Asynchronous JavaScript and XML) adalah inti dari bagaimana AJAX bekerja. AJAX memungkinkan pengiriman permintaan ke server tanpa harus memuat ulang seluruh halaman web, dan ini dilakukan secara asynchronous. Ini berarti saat permintaan dikirim, program JavaScript tidak harus menunggu respons dari server sebelum menjalankan tindakan lain. 
+
+4. alam konteks penggunaan AJAX, perbandingan antara Fetch API dan jQuery menggambarkan dua pendekatan yang berbeda. Fetch API adalah bagian dari JavaScript modern, memberikan kemudahan dalam mengelola permintaan asynchronous dengan menggunakan Promise. Ia lebih ringan dan tidak memerlukan unduhan perpustakaan tambahan, sehingga cocok untuk proyek-proyek modern yang berfokus pada kinerja dan ditargetkan pada browser terbaru. Di sisi lain, jQuery dikenal karena kompatibilitas browser yang sangat baik, dengan dukungan untuk berbagai versi browser. Ia menawarkan sintaksis yang lebih sederhana dan banyak plugin serta fungsi tambahan yang dapat mempercepat pengembangan. menurut saya pada tugas pbp ini dapat menggunakan yang mana saja namun bisa hanya menggunkaan menggunankan jquery karena lebih sederhana dan lebih ramah pemula walaupun secara efisiensi tidak sebaik fetch Api
+
+5. Step -by step
+
+1. Saya membuat fungsi `get` dan `add` untuk digunakan dalam permintaan Ajax. Ini adalah tindakan yang saya lakukan di sisi server (Python Django). Saya memastikan telah mengonfigurasi ulang `urls.py` saya untuk menangani permintaan ini. Dalam `urls.py`, saya mengimpor fungsi-fungsi yang relevan dan menentukan rute yang sesuai untuk masing-masing fungsi tersebut.
+
+2. Saya mengganti elemen "card product" dalam file HTML agar dapat diproses menggunakan JavaScript. Saya menambahkan atribut atau ID tertentu pada elemen HTML tersebut, sehingga nantinya saya dapat dengan mudah mengidentifikasinya dalam kode JavaScript.
+
+3. Saya menambahkan beberapa script JavaScript untuk melakukan berbagai operasi seperti `add`, `refresh`, dan `get`. Saya memastikan bahwa script JavaScript ini berada di dalam file HTML saya atau disertakan melalui tag `<script>` dalam halaman HTML saya.
+
+4. Untuk mengelola file statis seperti gambar, CSS, dan JavaScript, saya menjalankan perintah "python manage.py collectstatic" di terminal. Ini akan mengumpulkan semua file statis yang diperlukan oleh aplikasi saya dan meletakkannya di direktori yang sesuai, sehingga mereka dapat diakses secara publik melalui server web saya.

@@ -125,7 +125,7 @@
 
         .btn-primary:hover {
             background-color: #452A5A;
-            color: #FFFFF;
+            color: #FFF;
         }
 
         .btn-warning {
@@ -249,30 +249,52 @@
   </div>
 </nav>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                    <label for="category" class="col-form-label">Category:</label>
+                    <input type="text" class="form-control" id="category" name="category"></input>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h5>Welcome, {{ name }}</h5>
 <h3>Product List</h3>
 
-<div class="card-container">
-    {% for product in products %}
-    <div class="card">
-        <div class="card-title">{{ product.name }}</div>
-        <div class="card-description">{{ product.description }}</div>
-        <div class="card-details">
-            <p>Amount: {{ product.amount }}</p>
-            <p>Price: {{ product.price }}</p>
-            <p>Category: {{ product.category }}</p>
-        </div>
-        <div class="card-buttons">
-            <a href="{% url 'main:edit_product' product.pk %}">
-                <button class="card-button">Edit</button>
-            </a>
-            <a href="{% url 'main:delete_product' product.pk %}">
-                <button class="card-button">Delete</button>
-            </a>
-        </div>
-    </div>
-    {% endfor %}
-</div>
+<div id="card-container" class="card-container"></div>
+
 
 <br />
 
@@ -280,7 +302,69 @@
 <a href="{% url 'main:create_product' %}">
     <button class="card-button">Add New Product</button>
 </a>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
 
 <h10>Last Login Session: {{ last_login }}</h10>
+
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json());
+    }
+
+    async function refreshProducts() {
+    const products = await getProducts();
+    const cardContainer = document.getElementById("card-container");
+    cardContainer.innerHTML = "";
+
+    products.forEach((item) => {
+        // Buat card untuk setiap produk
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const cardTitle = document.createElement("h2");
+        cardTitle.textContent = item.fields.name;
+        card.appendChild(cardTitle);
+
+        const cardAmount = document.createElement("p");
+        cardAmount.textContent = `Amount: ${item.fields.amount}`;
+        card.appendChild(cardAmount);
+
+        const cardDate = document.createElement("p");
+        cardDate.textContent = `Date Added: ${item.fields.date_added}`;
+        card.appendChild(cardDate);
+
+        const cardCategory = document.createElement("p");
+        cardCategory.textContent = `Category: ${item.fields.category}`;
+        card.appendChild(cardCategory);
+
+        const cardDescription = document.createElement("p");
+        cardDescription.textContent = `Description: ${item.fields.description}`;
+        card.appendChild(cardDescription);
+
+        // Tambahkan card ke card-container
+        cardContainer.appendChild(card);
+    });
+}
+
+
+    refreshProducts()
+
+    
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addProduct
+
+
+</script>
+
 
 {% endblock content %}
